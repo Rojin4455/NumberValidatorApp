@@ -73,11 +73,13 @@ def check_and_update_contact(contact_id,new_tags):
     if search_data.get("contact"):
 
         print(f"Found contact ID: {contact_id}")
+        data = search_data.get("contact")
 
         # === STEP 2: Update tags ===
         update_url = f"{API_BASE}/contacts/{contact_id}"
+
         update_payload = {
-            "tags": new_tags
+            "tags": new_tags + data.get("tags")
         }
 
         update_headers = headers.copy()
