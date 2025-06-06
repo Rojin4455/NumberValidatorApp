@@ -144,6 +144,6 @@ CELERY_TIMEZONE = 'UTC'
 CELERY_BEAT_SCHEDULE = {
     'make-api-call-every-minute': {
         'task': 'core.tasks.make_api_call',
-        'schedule': timedelta(hours=15),
+        'schedule': timedelta(minutes=1),
     },
 }
